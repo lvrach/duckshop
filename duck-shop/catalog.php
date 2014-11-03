@@ -1,20 +1,17 @@
-<?php
-	if(isset($_POST['q'])) {
+<? 	
 
-		$q = $_POST['q'];
-		$sql = "SELECT * FROM `products` WHERE (title LIKE '$q');";
-		echo $q . " <br/>";
-	} 
-	else {
-		$sql = "SELECT * FROM `products` ;";
-	}
-	$result = $rm->mysql_query($sql);
-?>
-<h3>Product Catalog :</h3>
-<?php
+	switch ( $__SECURITY_LEVEL ) {
+		case 'high':
+			include('levels/high/' . basename( __FILE__ ) );
+			break;
 
-	while($row = mysql_fetch_array($result)) {
-		echo '<a href="index.php?p=product.php&pid='.$row['id'].'" >';
-		echo $row['title'] . "</a> " . $row['price'] . "$ <br/>" ;
+		case 'medium':
+			include('levels/medium/' . basename( __FILE__ ) );
+			break;
+
+		case 'low':
+		default:			
+			include('levels/low/' . basename( __FILE__ ) );
+			break;
+		
 	}
-?>	

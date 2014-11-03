@@ -1,19 +1,15 @@
  <?php 
 
-    if (isset($_POST['confirm']) ) {        
+switch ( $__SECURITY_LEVEL ) {
+		case 'high':
+			include('levels/high/' . basename($_SERVER['SCRIPT_FILENAME']) );
+			break;
 
-        $name = $_SESSION['name'];
+		case 'medium':
+			include('levels/medium/' . basename($_SERVER['SCRIPT_FILENAME']) );
+			break;
 
-        $sql = "DELETE FROM `users` WHERE name='$name';";
-        $result = $rm->mysql_query($sql); 
-
-        session_destroy(); //logout 
-    }
-
-?>
-
-<form method="POST" >
-	<input hidden="hidden" type="text" name="confirm"/><br/>
-	Remove Account :
-	<input type="submit" value="Confirm">
-</form>
+		case 'low':
+		default:			
+			include('levels/low/' . basename($_SERVER['SCRIPT_FILENAME']) );
+			break;

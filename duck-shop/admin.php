@@ -1,33 +1,17 @@
-<?php 
-	session_start();
-	require_once('RemoteMonitor.php');
-	$rm = new RemoteMonitor('7070');
-	
-	require_once('connect_db.php');
-?>
+<? 	
 
-<html>
-	<head>
-		<title>Admin Panel</title>
-	</head>
-	<body>
-		<h1> Shop Admin Panel </h1> 
+	switch ( $__SECURITY_LEVEL ) {
+		case 'high':
+			include('levels/high/' . basename( __FILE__ ) );
+			break;
+
+		case 'medium':
+			include('levels/medium/' . basename( __FILE__ ) );
+			break;
+
+		case 'low':
+		default:			
+			include('levels/low/' . basename( __FILE__ ) );
+			break;
 		
-		<image src="<? echo $_SESSION['avatar']; ?>" width="60" height="auto" ></image>
-		<?php 
-			if(session_is_registered("login") && $_SESSION['role'] == "admin") {
-				echo 'Wellcome ' . $_SESSION['name'] . ' Duck';
-		
-				include("admin/" . $_GET['p']);	
-			}
-			else {
-
-				echo "You are not admin, you are just a " . $_SESSION['role'];	
-			}
-
-		?>		
-
-		
-	</body>
-
-</html>
+	}
