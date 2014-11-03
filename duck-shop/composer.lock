@@ -1,0 +1,33 @@
+{
+    "hash": "edab57fc440431593ae5e55ba3e90fbf",
+    "packages": [
+        {
+            "package": "evenement/evenement",
+            "version": "1.0.x-dev",
+            "source-reference": "v1.0.0",
+            "commit-date": "1338390068"
+        },
+        {
+            "package": "react/event-loop",
+            "version": "v0.2.0"
+        },
+        {
+            "package": "react/socket",
+            "version": "dev-master",
+            "source-reference": "v0.2.0",
+            "commit-date": "1347281779"
+        },
+        {
+            "package": "react/stream",
+            "version": "v0.2.0"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "react/socket": 20
+    }
+}
