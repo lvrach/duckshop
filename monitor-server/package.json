@@ -1,0 +1,20 @@
+{
+  "name": "duckshop-monitor-sever",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "dnode": "^1.2.0",
+    "express": "^3.0.0rc2",
+    "socket.io": "^0.9.17",
+    "socket.io-client": "^0.9.10",
+    "websocket": "^1.0.7",
+    "websocket-server": "^1.4.04"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
