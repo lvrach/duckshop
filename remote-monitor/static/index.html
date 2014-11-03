@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ></meta>
+		 
+		<link href="monitor.css" rel="stylesheet" type="text/css"></link>
+					
+		<script type='text/javascript' src='js/jquery-1.8.0.min.js'></script>			
+		<script type='text/javascript' src='js/handlebars-1.0.0.beta.6.js'></script>
+		<script type='text/javascript' src='js/monitor.js'></script>
+		<script type='text/javascript' src="/socket.io/socket.io.js"></script>
+			
+		<title>Monitor Site</title>					 
+		
+		<script class="template" id="session-template" type="text/x-handlebars-template">
+			<div class="s-{{id}}-session sessionbox"> 
+				<div class="request-list"></div>
+				<div class="session-info"></div>
+			</div>
+			
+		</script>
+
+
+		<script class="template" id="request-template" type="text/x-handlebars-template">
+			<div class="u-{{id}}-request reportbox"> 
+				<span class="title"></span>
+				<div class="basic-info" >
+					Url : <span class="request-url"></span>								
+				</div>
+				
+				<div class="post">method: <span class="method"></span></div>
+				
+				<div class="sql">SQL: </div>			
+				
+			</div>
+		</script>
+		
+		<script class="template" id="request-post" type="text/x-handlebars-template">
+			<div> 
+				
+				 {{#each post}}				 
+					{{key}}: {{value}}<br/>
+				{{/each}}
+			</div>
+		</script>
+		
+		
+		<script class="template" id="sql_query-template" type="text/x-handlebars-template">
+			<div class="sql_query status-{{status}}"> 
+				<span class="query"> {{query}} </span>
+				<span class="error"> {{result}} </span>						
+			</div>
+		</script>
+		
+		<script class="template" id="request-log-template" type="text/x-handlebars-template">
+			<div> 
+				{{type}} ({{level}}) :				
+				{{msg}}
+			</div>
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>Monitor Site</h1>	
+		<div class="event-viewer">
+			
+			<div class="session-list" >
+				
+				
+			</div>		
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,103 @@
+body 
+{
+	background-color: #292929;
+}
+
+h1
+{
+	color: green;
+}
+
+.session-list  >  :nth-child(odd)
+{
+	
+	border-left: 10px solid #3F4239 ;
+	margin-bottom: 10px;
+
+}
+.session-list  >  :nth-child(even)
+{
+	
+	border-left: 10px solid #55442A ;
+	margin-bottom: 10px;
+
+} 
+
+.reportbox
+{
+	width: 800px;
+	border:2px solid #383838;
+	border-radius:5px;
+	margin: 15px;
+	padding: 15px ;
+	padding-top: 10px ;
+	color: #D8D8D8;
+
+	font-size: 17px;
+	background-color: #3A3A3A;
+}
+.reportbox .title 
+{
+	color: green;
+	font-size: 130%;
+}
+
+.reportbox div
+{
+	border:1px solid #383838;
+	border-radius:5px;	
+
+	padding: 5px ;
+
+	background-color: #3F3F3F;
+}
+
+.more:empty
+{
+	display:none;
+}
+
+
+.request-url .highlight 
+{
+	color: #E8E8E8;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+.sql_query .query .highlight
+{
+	padding-left: 5px ;
+	padding-right: 3px;
+
+	margin-left: 2px;
+	margin-right: 2px;
+
+	border:1px solid #CC7A00;
+	border-radius:3px;
+
+	font-size: 120%;
+	font-weight: bold;
+
+	color: #E8E8E8;
+	background-color: #CC7A00;
+}
+
+.sql_query.status-error .query
+{
+	display: block;
+	border:1px solid #383838;
+	border-radius:5px;	
+	background-color: #730000;	
+}
+
+.sql_query.status-success 
+{
+	background-color: #3D5C00;	
+}
+
+.sql_query.status-success .error 
+{
+	display:none;
+
+}
